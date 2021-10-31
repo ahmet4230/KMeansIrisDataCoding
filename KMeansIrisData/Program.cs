@@ -32,6 +32,7 @@ namespace Ml
                 .Append(mlContext.Clustering.Trainers.KMeans(featuresColumnName, numberOfClusters: 3));
 
             var model = pipeline.Fit(dataView);
+
             using (var fileStream = new FileStream(_modelPath,
             FileMode.Create,
             FileAccess.Write,
